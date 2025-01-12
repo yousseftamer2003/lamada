@@ -448,7 +448,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           });
           return;
         }
-        if (selectedDeliveryLocation == null) {
+        if (selectedDeliveryLocation == null && selectedDeliveryOption == 'delivery') {
           showTopSnackBar(
               context,
               'Please select an address to procced the order',
