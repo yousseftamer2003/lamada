@@ -533,6 +533,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to load profile data`
+  String get failed_to_load {
+    return Intl.message(
+      'Failed to load profile data',
+      name: 'failed_to_load',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load profile data`
+  String get failed_to_load_profile {
+    return Intl.message(
+      'Failed to load profile data',
+      name: 'failed_to_load_profile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

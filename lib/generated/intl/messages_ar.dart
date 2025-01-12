@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "details": MessageLookupByLibrary.simpleMessage("التفاصيل"),
         "discount": MessageLookupByLibrary.simpleMessage("الخصومات"),
         "explore_menu": MessageLookupByLibrary.simpleMessage("استكشاف القائمة"),
+        "failed_to_load": MessageLookupByLibrary.simpleMessage(
+            "فشل في تحميل بيانات الملف الشخصي"),
         "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "history": MessageLookupByLibrary.simpleMessage("السجل"),
         "ingredients": MessageLookupByLibrary.simpleMessage("المكونات"),

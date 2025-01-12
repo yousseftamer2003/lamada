@@ -17,6 +17,7 @@ import 'package:food2go_app/view/widgets/show_top_snackbar.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uni_links3/uni_links.dart';
 
 class ProductProvider with ChangeNotifier {
   List<Product> _products = [];
@@ -304,7 +305,8 @@ class ProductProvider with ChangeNotifier {
             ),
           );
           if (result == true) {
-            await checkCallBack(context, orderId);
+            // await checkCallBack(context, orderId);
+            handleIncomingLinks();
           } else {
             log('WebView closed without completing the payment');
           }
@@ -322,6 +324,21 @@ class ProductProvider with ChangeNotifier {
       log('Error in post order: $e');
     }
   }
+
+  void handleIncomingLinks() {
+  uriLinkStream.listen((Uri? uri) {
+    if (uri != null) {
+      if (uri.host == 'payment-success') {
+        // Handle payment success
+        log('Payment was successful!');
+      } else if (uri.host == 'payment-failure') {
+        // Handle payment failure
+        log('Payment failed.');
+      }
+    }
+  });
+}
+
 
   Future<void> addToCart(Product product, List<Extra> extra, List<Option> options,
       List<AddOns> addons, List<Excludes> excludes) async {

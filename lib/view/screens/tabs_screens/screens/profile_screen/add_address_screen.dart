@@ -31,6 +31,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   Set<Marker> _markers = {};
   late GooglePlace googlePlace;
   List<AutocompletePrediction> predictions = [];
+  late CameraPosition _currentCameraPosition;
 
   final TextEditingController addressController = TextEditingController();
   final TextEditingController streetController = TextEditingController();
@@ -44,6 +45,10 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   @override
   void initState() {
     super.initState();
+    _currentCameraPosition = CameraPosition(
+      target: _initialPosition,
+      zoom: 14,
+    );
     googlePlace = GooglePlace('AIzaSyDuPxES-ul4k6UU4MiME97aoWHpxRt7Www');
     _determinePosition();
   }
@@ -160,8 +165,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 onMapCreated: (controller) {
                                   _mapController = controller;
                                 },
-                                initialCameraPosition: CameraPosition(
-                                    target: _initialPosition, zoom: 14),
+                                initialCameraPosition: _currentCameraPosition,
                                 myLocationEnabled: true,
                                 myLocationButtonEnabled: false,
                                 markers: _markers,
@@ -179,20 +183,49 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                               icon: const Icon(Icons.fullscreen),
                               color: Colors.black,
                               onPressed: () async {
-                                final selectedAddress = await Navigator.push(
+                                final result = await Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => FullScreenMapScreen(
-                                      initialPosition: CameraPosition(
-                                        target: _initialPosition,
-                                        zoom: 14,
-                                      ),
+                                      initialPosition: _currentCameraPosition,
                                     ),
                                   ),
                                 );
 
-                                if (selectedAddress != null) {
-                                  log('Selected Address: $selectedAddress');
+                                if (result != null) {
+                                  final selectedLocation =
+                                      result['location'] as LatLng;
+                                  final selectedAddress =
+                                      result['address'] as String;
+
+                                  setState(() {
+                                    // Update camera position
+                                    _currentCameraPosition = CameraPosition(
+                                      target: selectedLocation,
+                                      zoom: 14,
+                                    );
+
+                                    // Update markers
+                                    _markers.clear();
+                                    _markers.add(
+                                      Marker(
+                                        markerId:
+                                            const MarkerId('selected_location'),
+                                        position: selectedLocation,
+                                        infoWindow:
+                                            InfoWindow(title: selectedAddress),
+                                      ),
+                                    );
+
+                                    // Update the TextField controller
+                                    addressController.text = selectedAddress;
+                                  });
+
+                                  // Animate the map to the new location
+                                  _mapController!.animateCamera(
+                                    CameraUpdate.newCameraPosition(
+                                        _currentCameraPosition),
+                                  );
                                 }
                               },
                             ),

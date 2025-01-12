@@ -44,6 +44,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "details": MessageLookupByLibrary.simpleMessage("Details"),
         "discount": MessageLookupByLibrary.simpleMessage("Discount"),
         "explore_menu": MessageLookupByLibrary.simpleMessage("Explore Menu"),
+        "failed_to_load":
+            MessageLookupByLibrary.simpleMessage("Failed to load profile data"),
+        "failed_to_load_profile":
+            MessageLookupByLibrary.simpleMessage("Failed to load profile data"),
         "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "ingredients": MessageLookupByLibrary.simpleMessage("Ingredients"),

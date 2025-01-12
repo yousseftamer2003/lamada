@@ -37,6 +37,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <data android:scheme="Lamada" android:host="callback_faild" />
+                <data android:scheme="Lamada" android:host="callback_success" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
