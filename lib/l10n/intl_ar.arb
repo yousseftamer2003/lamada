@@ -48,5 +48,6 @@
     "cancel": "إلغاء",
     "redeem": "استرداد",
     "order_summary": "ملخص الطلب",
-    "Choose_Pickup_or_Delivery": "اختر طريقة الطلب"
+    "Choose_Pickup_or_Delivery": "اختر طريقة الطلب",
+    "failed_to_load": "فشل في تحميل بيانات الملف الشخصي"
 }

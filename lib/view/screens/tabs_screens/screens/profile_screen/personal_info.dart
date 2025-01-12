@@ -5,6 +5,7 @@ import 'package:food2go_app/view/widgets/custom_appbar.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../constants/colors.dart';
+import '../../../../../generated/l10n.dart';
 
 class PersonalInfo extends StatefulWidget {
   const PersonalInfo({super.key});
@@ -32,7 +33,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
       body: profilesProvider.isLoading
           ? const Center(child: CircularProgressIndicator())
           : profilesProvider.userProfile == null
-              ? const Center(child: Text("Failed to load profile data"))
+              ?  Center(child: Text(S.of(context).failed_to_load))
               : Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
