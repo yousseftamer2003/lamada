@@ -49,5 +49,6 @@
     "redeem": "Redeem",
     "order_summary": "Order Summary",
     "Choose_Pickup_or_Delivery": "Choose Pickup or Delivery",
-    "failed_to_load": "Failed to load profile data"
+    "failed_to_load": "Failed to load profile data",
+    "failed_to_load_profile": "Failed to load profile data"
 }

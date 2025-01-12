@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:food2go_app/controllers/profile/get_profile_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:food2go_app/view/screens/tabs_screens/screens/profile_screen/edit_profile_screen.dart';
 import 'package:food2go_app/view/widgets/custom_appbar.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../../constants/colors.dart';
-import '../../../../../generated/l10n.dart';
 
 class PersonalInfo extends StatefulWidget {
   const PersonalInfo({super.key});
