@@ -1,7 +1,5 @@
 // ignore_for_file: unused_field
 
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/address/get_address_provider.dart';
@@ -47,12 +45,12 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   @override
   void initState() {
     super.initState();
+    googlePlace = GooglePlace('AIzaSyDuPxES-ul4k6UU4MiME97aoWHpxRt7Www');
+    _determinePosition();
     _currentCameraPosition = CameraPosition(
       target: _initialPosition,
       zoom: 14,
     );
-    googlePlace = GooglePlace('AIzaSyDuPxES-ul4k6UU4MiME97aoWHpxRt7Www');
-    _determinePosition();
   }
 
   Future<void> _determinePosition() async {

@@ -37,7 +37,7 @@ class ResultScreen extends StatelessWidget {
               children: [
                 if (categoryId != null)
                   _buildCategoryTag('${S.of(context).category} $categoryName'),
-                _buildPriceRangeTag(priceStart, priceEnd),
+                _buildPriceRangeTag(priceStart, priceEnd,context),
               ],
             ),
             const SizedBox(height: 20),
@@ -92,7 +92,7 @@ class ResultScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildPriceRangeTag(double start, double end) {
+  Widget _buildPriceRangeTag(double start, double end,BuildContext context) {
     return Container(
       height: 40,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -102,7 +102,7 @@ class ResultScreen extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          'Price: \$${start.toInt()} - \$${end.toInt()}',
+          '${S.of(context).price}: \$${start.toInt()} - \$${end.toInt()}',
           style: const TextStyle(
             fontSize: 16,
             color: maincolor,

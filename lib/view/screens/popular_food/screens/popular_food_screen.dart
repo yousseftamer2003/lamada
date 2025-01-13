@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food2go_app/controllers/product_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:food2go_app/view/screens/popular_food/widget/popular_food_widget.dart';
 import 'package:food2go_app/view/widgets/custom_appbar.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +22,7 @@ class _PopularFoodScreenState extends State<PopularFoodScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context, 'Popular Food'),
+      appBar: buildAppBar(context, S.of(context).popular_food),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Consumer<ProductProvider>(
