@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/orders/orders_history_provider.dart';
 import 'package:food2go_app/controllers/orders/orders_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:food2go_app/models/orders/order_history_model.dart';
 import 'package:food2go_app/models/orders/orders_model.dart';
 import 'package:food2go_app/view/screens/order_tracing_screen.dart';
@@ -38,8 +39,8 @@ class MyOrderScreen extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
             ),
           ),
-          title: const Text(
-            'My Order',
+          title: Text(
+            S.of(context).myOrder,
             style: TextStyle(
               color: Colors.black,
               fontSize: 20,
@@ -47,14 +48,14 @@ class MyOrderScreen extends StatelessWidget {
             ),
           ),
           centerTitle: true,
-          bottom: const TabBar(
+          bottom: TabBar(
             indicatorColor: maincolor,
             labelColor: maincolor,
             unselectedLabelColor: Colors.grey,
             tabs: [
               Tab(
                 child: Text(
-                  'Ongoing',
+                  S.of(context).ongoing,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -63,7 +64,7 @@ class MyOrderScreen extends StatelessWidget {
               ),
               Tab(
                 child: Text(
-                  'History',
+                  S.of(context).history,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -108,8 +109,8 @@ class MyOrderScreen extends StatelessWidget {
               color: Colors.grey[300],
             ),
             const SizedBox(height: 20),
-            const Text(
-              'No Order History',
+            Text(
+              S.of(context).noOrderHistory,
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.black87,
@@ -117,7 +118,7 @@ class MyOrderScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const Text(
+            Text(
               "You haven't made any purchase yet",
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -139,10 +140,12 @@ class MyOrderScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const TabsScreen(initialIndex: 0,)));
+                        builder: (context) => const TabsScreen(
+                              initialIndex: 0,
+                            )));
               },
-              child: const Text(
-                'Explore Menu',
+              child: Text(
+                S.of(context).exploreMenu,
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -196,8 +199,8 @@ class MyOrderScreen extends StatelessWidget {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: const Text('Order Actions'),
-              content: const Text('Choose an action for your order.'),
+              title: Text(S.of(context).order_actions),
+              content: Text(S.of(context).choose_action),
               actions: [
                 TextButton(
                   onPressed: () {
@@ -210,23 +213,23 @@ class MyOrderScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('Track Order'),
+                  child: Text(S.of(context).track_order),
                 ),
                 if (canCancelOrder)
                   TextButton(
                     onPressed: () async {
                       await ordersProvider.cancelOrder(context, order.id!);
                     },
-                    child: const Text(
-                      'Cancel Order',
+                    child: Text(
+                      S.of(context).cancel_order,
                       style: TextStyle(color: maincolor),
                     ),
                   )
                 else
-                  const TextButton(
+                  TextButton(
                     onPressed: null, // Disable the button
                     child: Text(
-                      'Cancellation Time Expired',
+                      S.of(context).cancellation_time_expired,
                       style: TextStyle(
                           color: Colors
                               .grey), // Greyed-out text to indicate it's disabled

@@ -5,6 +5,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/Auth/login_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:food2go_app/view/screens/tabs_screen.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
@@ -52,8 +53,8 @@ class OrderTrackingScreen extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Order Tracking',
+          title: Text(
+            S.of(context).order_tracking,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
           ),
           centerTitle: true,
@@ -61,8 +62,9 @@ class OrderTrackingScreen extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const TabsScreen(initialIndex: 0,)
-                ),
+                    builder: (context) => const TabsScreen(
+                          initialIndex: 0,
+                        )),
               );
             },
             child: Container(
@@ -93,13 +95,14 @@ class OrderTrackingScreen extends StatelessWidget {
             } else {
               final data = snapshot.data!;
               final status = data['status'] ?? 'unknown';
-              final setting = data['delivery_time']['setting'] ?? 'Not Available';
+              final setting =
+                  data['delivery_time']['setting'] ?? 'Not Available';
               final createdAtString = data['delivery_time']['created_at'] ?? '';
               var timedeliverd = data['time_delivered'] ?? 'unknown';
-      
+
               DateTime? deliveredTime;
               int differenceInMinutes = 0;
-      
+
               try {
                 if (timedeliverd != 'unknown') {
                   if (timedeliverd.contains("T")) {
@@ -117,13 +120,13 @@ class OrderTrackingScreen extends StatelessWidget {
                     );
                   }
                   differenceInMinutes =
-                      - DateTime.now().difference(deliveredTime).inMinutes;
+                      -DateTime.now().difference(deliveredTime).inMinutes;
                 }
               } catch (e) {
                 log('Error parsing time_delivered: $e');
                 deliveredTime = null;
               }
-      
+
               return Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -132,7 +135,7 @@ class OrderTrackingScreen extends StatelessWidget {
                     Text(
                       deliveredTime != null
                           ? 'Delivery time: ${DateFormat('hh:mm:ss a').format(deliveredTime)}'
-                          : 'Delivery time: unknown',
+                          : S.of(context).delivery_time,
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -152,7 +155,7 @@ class OrderTrackingScreen extends StatelessWidget {
                         children: [
                           _buildOrderStatusItem(
                             icon: Icons.pending_actions,
-                            title: 'Pending',
+                            title: S.of(context).pending,
                             isActive: status == 'pending' ||
                                 status == 'confirmed' ||
                                 status == 'processing' ||
@@ -163,7 +166,7 @@ class OrderTrackingScreen extends StatelessWidget {
                           ),
                           _buildOrderStatusItem(
                             icon: Icons.kitchen,
-                            title: 'Preparing',
+                            title: S.of(context).preparing,
                             isActive: status == 'processing' ||
                                 status == 'out_for_delivery' ||
                                 status == 'scheduled' ||
@@ -172,14 +175,14 @@ class OrderTrackingScreen extends StatelessWidget {
                           ),
                           _buildOrderStatusItem(
                             icon: Icons.delivery_dining,
-                            title: 'Out for Delivery',
+                            title: S.of(context).out_for_delivery,
                             isActive: status == 'out_for_delivery' ||
                                 status == 'delivered',
                             isLast: false,
                           ),
                           _buildOrderStatusItem(
                             icon: Icons.check_circle_outline,
-                            title: 'Delivered',
+                            title: S.of(context).delivered,
                             isActive: status == 'delivered',
                             isLast: true,
                           ),

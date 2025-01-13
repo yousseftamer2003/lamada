@@ -108,5 +108,6 @@
     "categories": "Categories",
     "price": "Price",
     "done": "Done",
+    "please_fill_required_fields": "Please fill all the required fields",
     "loadingCategories": "Loading categories..."
 }

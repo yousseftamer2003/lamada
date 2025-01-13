@@ -107,5 +107,6 @@
     "categories": "الفئات",
     "price": "السعر",
     "done": "تم",
+    "please_fill_required_fields": "يرجى ملء جميع الحقول المطلوبة",
     "loadingCategories": "جاري تحميل الفئات..."
 }

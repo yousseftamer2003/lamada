@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food2go_app/controllers/Auth/login_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:provider/provider.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/address/get_address_provider.dart';
@@ -34,7 +35,7 @@ class _AddressScreenState extends State<AddressScreen> {
     final token = loginProvider.token!;
 
     return Scaffold(
-      appBar: buildAppBar(context, 'Addresses'),
+      appBar: buildAppBar(context, S.of(context).address),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -58,7 +59,7 @@ class _AddressScreenState extends State<AddressScreen> {
                           fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      profilesProvider.userProfile!.bio?? 'no bio',
+                      profilesProvider.userProfile!.bio ?? 'no bio',
                       style: const TextStyle(color: Colors.grey),
                     ),
                   ],
@@ -72,11 +73,11 @@ class _AddressScreenState extends State<AddressScreen> {
                   : addressProvider.errorMessage != null
                       ? Center(child: Text(addressProvider.errorMessage!))
                       : addressProvider.addresses.isEmpty
-                          ? const Column(
+                          ? Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'No addresses found!',
+                                  S.of(context).noAddressesFound,
                                   style: TextStyle(
                                       fontSize: 18, color: Colors.grey),
                                 ),
@@ -123,8 +124,8 @@ class _AddressScreenState extends State<AddressScreen> {
                       ),
                     );
                   },
-                  child: const Text(
-                    'Add New Address',
+                  child: Text(
+                    S.of(context).addNewAddress,
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ),
@@ -192,15 +193,15 @@ class _AddressScreenState extends State<AddressScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  title: const Row(
+                  title:  Row(
                     children: [
                       Icon(Icons.warning_amber_rounded, color: maincolor),
                       SizedBox(width: 8),
-                      Text('Delete Address'),
+                      Text(S.of(context).deleteAddress),
                     ],
                   ),
-                  content: const Text(
-                    'Are you sure you want to delete this address? This action cannot be undone.',
+                  content:  Text(
+                    S.of(context).deleteAddressWarning,
                     style: TextStyle(fontSize: 16),
                   ),
                   actions: [
@@ -209,8 +210,8 @@ class _AddressScreenState extends State<AddressScreen> {
                         foregroundColor: Colors.grey,
                       ),
                       onPressed: () => Navigator.of(context).pop(false),
-                      child: const Text(
-                        'Cancel',
+                      child:  Text(
+                        S.of(context).cancel,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -219,8 +220,8 @@ class _AddressScreenState extends State<AddressScreen> {
                         backgroundColor: maincolor,
                       ),
                       onPressed: () => Navigator.of(context).pop(true),
-                      child: const Text(
-                        'Delete',
+                      child:  Text(
+                        S.of(context).delete,
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
