@@ -412,8 +412,14 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
     );
   }
 
-  Widget _buildTextField(BuildContext context, String label,
-      {TextEditingController? controller, bool isRequired = false}) {
+  Widget _buildTextField(
+    BuildContext context,
+    String label, {
+    TextEditingController? controller,
+    bool isRequired = false,
+  }) {
+    controller ??= TextEditingController();
+
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
@@ -431,6 +437,12 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
           ? (value) =>
               value == null || value.isEmpty ? 'This field is required' : null
           : null,
+      onChanged: (value) {
+        // Keep the cursor at the end of the text
+        controller!.selection = TextSelection.fromPosition(
+          TextPosition(offset: controller.text.length),
+        );
+      },
     );
   }
 
