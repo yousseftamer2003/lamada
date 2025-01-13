@@ -130,5 +130,6 @@
     "try_another_payment_please": "try anothe rpayment please",
     "place_order": "Place Order",
     "you_have_to_login_first": "You have to login first",
+    "please_fill_required_fields": "Please fill all the required fields",
     "Result": "Result"
 }

@@ -5,6 +5,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/address/get_address_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:food2go_app/view/screens/tabs_screens/screens/profile_screen/full_map_screen.dart';
 import 'package:food2go_app/view/widgets/custom_appbar.dart';
 import 'package:food2go_app/view/widgets/show_top_snackbar.dart';
@@ -140,7 +141,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(context, 'Add address'),
+      appBar: buildAppBar(context, S.of(context).add_address),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Form(
@@ -210,15 +211,14 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                     _markers.clear();
                                     _markers.add(
                                       Marker(
-                                        markerId:
-                                            const MarkerId('selected_location'),
+                                        markerId: MarkerId(
+                                            S.of(context).selected_address),
                                         position: selectedLocation,
                                         infoWindow:
                                             InfoWindow(title: selectedAddress),
                                       ),
                                     );
 
-                                    // Update the TextField controller
                                     addressController.text = selectedAddress;
                                   });
 
@@ -237,7 +237,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                       TextField(
                         controller: addressController,
                         decoration: InputDecoration(
-                          hintText: 'Selected Address',
+                          hintText: S.of(context).selected_address,
                           filled: true,
                           fillColor: Colors.grey.shade100, // Background color
                           contentPadding: const EdgeInsets.symmetric(
@@ -269,37 +269,39 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _buildCategoryButton(context, 'Home'),
-                          _buildCategoryButton(context, 'Work'),
-                          _buildCategoryButton(context, 'Other'),
+                          _buildCategoryButton(context, S.of(context).home),
+                          _buildCategoryButton(context, S.of(context).work),
+                          _buildCategoryButton(context, S.of(context).other),
                         ],
                       ),
                       const SizedBox(height: 16),
-                      _buildDropdownField(context, 'Select Zone'),
+                      _buildDropdownField(context, S.of(context).select_zone),
                       const SizedBox(height: 16),
-                      _buildTextField(context, 'Street',
+                      _buildTextField(context, S.of(context).street,
                           controller: streetController, isRequired: true),
                       const SizedBox(height: 16),
-                      _buildTextField(context, 'Building No.',
+                      _buildTextField(context, S.of(context).building_no,
                           controller: buildingNumController, isRequired: true),
                       const SizedBox(height: 16),
                       Row(
                         children: [
                           Expanded(
-                            child: _buildTextField(context, 'Floor No.',
+                            child: _buildTextField(
+                                context, S.of(context).floor_no,
                                 controller: floorNumController,
                                 isRequired: true),
                           ),
                           const SizedBox(width: 16),
                           Expanded(
-                            child: _buildTextField(context, 'Apartment',
+                            child: _buildTextField(
+                                context, S.of(context).apartment,
                                 controller: apartmentController,
                                 isRequired: true),
                           ),
                         ],
                       ),
                       const SizedBox(height: 16),
-                      _buildTextField(context, 'Additional Data',
+                      _buildTextField(context, S.of(context).additional_data,
                           controller: additionalDataController),
                       const SizedBox(height: 20),
                       SizedBox(
@@ -318,16 +320,15 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                         floorNumController.text.isEmpty ||
                                         apartmentController.text.isEmpty ||
                                         selectedZoneId == null ||
-                                        additionalDataController
-                                            .text.isEmpty) {
+                                        additionalDataController.text.isEmpty) {
                                       showTopSnackBar(
                                           context,
                                           'Please fill all the required fields',
                                           Icons.warning_outlined,
                                           maincolor,
                                           const Duration(seconds: 4));
-                                          return;
-                                            }
+                                      return;
+                                    }
 
                                     try {
                                       await Provider.of<AddressProvider>(
@@ -364,8 +365,8 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                   valueColor: AlwaysStoppedAnimation<Color>(
                                       Colors.white),
                                 )
-                              : const Text(
-                                  'Save Address',
+                              : Text(
+                                  S.of(context).save_address,
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
@@ -405,8 +406,9 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
             );
           }).toList(),
           onChanged: (value) => setState(() => selectedZoneId = value),
-          validator: (value) =>
-              value == null || value.isEmpty ? 'Please select a zone' : null,
+          validator: (value) => value == null || value.isEmpty
+              ? S.of(context).please_select_zone
+              : null,
         );
       },
     );

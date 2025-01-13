@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/product_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:food2go_app/view/screens/popular_food/widget/popular_food_widget.dart';
 import 'package:food2go_app/view/widgets/custom_appbar.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,7 @@ class ResultScreen extends StatelessWidget {
         productProvider.getFilteredProducts(categoryId, priceStart, priceEnd);
 
     return Scaffold(
-      appBar: buildAppBar(context, 'Result'),
+      appBar: buildAppBar(context, S.of(context).Result),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -35,7 +36,7 @@ class ResultScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 if (categoryId != null)
-                  _buildCategoryTag('Category $categoryName'),
+                  _buildCategoryTag('${S.of(context).category} $categoryName'),
                 _buildPriceRangeTag(priceStart, priceEnd),
               ],
             ),

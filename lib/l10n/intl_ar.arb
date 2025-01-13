@@ -129,6 +129,7 @@
     "try_another_payment_please": "يرجى تجربة طريقة دفع أخرى",
     "place_order": "إتمام الطلب",
     "you_have_to_login_first": "عليك تسجيل الدخول اولا",
-    "Result": "النتيجة"
+    "Result": "النتيجة",
+    "please_fill_required_fields": "يرجى ملء جميع الحقول المطلوبة"
 
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:provider/provider.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/view/screens/tabs_screens/screens/result_screen.dart';
@@ -31,7 +32,7 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context, 'Filter'),
+      appBar: buildAppBar(context, S.of(context).filter),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Consumer<CategoriesProvider>(
@@ -40,9 +41,9 @@ class _FilterScreenState extends State<FilterScreen> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Categories',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                Text(
+                  S.of(context).categories,
+                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 10),
                 Wrap(
@@ -55,9 +56,9 @@ class _FilterScreenState extends State<FilterScreen> {
                       : [const CircularProgressIndicator()],
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  'Price',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                Text(
+                  S.of(context).price,
+                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 RangeSlider(
                   activeColor: maincolor,
@@ -99,7 +100,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       backgroundColor: maincolor,
                       foregroundColor: Colors.white,
                     ),
-                    child: const Text('Done'),
+                    child: Text(S.of(context).done),
                   ),
                 ),
               ],

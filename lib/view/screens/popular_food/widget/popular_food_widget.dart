@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/Auth/login_provider.dart';
 import 'package:food2go_app/controllers/product_provider.dart';
+import 'package:food2go_app/generated/l10n.dart';
 import 'package:food2go_app/models/categories/product_model.dart';
 import 'package:food2go_app/view/screens/cart/product_details_screen.dart';
 import 'package:food2go_app/view/widgets/show_top_snackbar.dart';
@@ -78,7 +79,7 @@ class _FoodCardState extends State<FoodCard> {
                     return GestureDetector(
                       onTap: () {
                         if(loginProvider.token == null){
-                          showTopSnackBar(context, 'You have to login first', Icons.warning_outlined, maincolor, const Duration(seconds: 3));
+                          showTopSnackBar(context, S.of(context).you_have_to_login_first, Icons.warning_outlined, maincolor, const Duration(seconds: 3));
                           return;
                         }
                         favProvider.makeFavourites(

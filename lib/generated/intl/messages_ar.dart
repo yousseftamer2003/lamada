@@ -39,11 +39,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اختر طريقة الطلب"),
         "Egp": MessageLookupByLibrary.simpleMessage("ج.م"),
         "English": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
+        "PayTo": MessageLookupByLibrary.simpleMessage("ادفع إلى"),
+        "Please_select_a_delivery_time":
+            MessageLookupByLibrary.simpleMessage("يرجى اختيار وقت التوصيل"),
+        "Please_select_a_payment_method_and_delivery_option":
+            MessageLookupByLibrary.simpleMessage(
+                "يرجى اختيار طريقة الدفع وخيار التوصيل"),
+        "Please_select_an_address_to_procced_the_order":
+            MessageLookupByLibrary.simpleMessage(
+                "يرجى اختيار عنوان لإتمام الطلب"),
+        "Please_select_an_branch_to_procced_the_order":
+            MessageLookupByLibrary.simpleMessage(
+                "يرجى اختيار فرع لإتمام الطلب"),
         "Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "Result": MessageLookupByLibrary.simpleMessage("النتيجة"),
         "Welcome": MessageLookupByLibrary.simpleMessage("مرحبًا،"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("إضافة عنوان جديد"),
         "add_address": MessageLookupByLibrary.simpleMessage("إضافة عنوان"),
+        "add_note": MessageLookupByLibrary.simpleMessage(
+            "أضف ملاحظة (مثل تعليمات التوصيل)"),
         "add_on_order": MessageLookupByLibrary.simpleMessage("إضافة على الطلب"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
         "additional_data":
@@ -51,9 +66,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "addresses": MessageLookupByLibrary.simpleMessage("العناوين"),
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
+        "apartement": MessageLookupByLibrary.simpleMessage("الشقة:"),
         "apartment": MessageLookupByLibrary.simpleMessage("الشقة"),
         "appBarTitle": MessageLookupByLibrary.simpleMessage("العناوين"),
         "building_no": MessageLookupByLibrary.simpleMessage("رقم المبنى"),
+        "building_num": MessageLookupByLibrary.simpleMessage("رقم المبنى:"),
         "building_number": MessageLookupByLibrary.simpleMessage("رقم المبنى"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "cancel_order": MessageLookupByLibrary.simpleMessage("إلغاء الطلب"),
@@ -74,10 +91,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteAddressWarning": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد أنك تريد حذف هذا العنوان؟ لا يمكن التراجع عن هذا الإجراء."),
         "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+        "delivery": MessageLookupByLibrary.simpleMessage("توصيل"),
         "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
         "delivery_time":
             MessageLookupByLibrary.simpleMessage("وقت التسليم: غير معروف"),
         "details": MessageLookupByLibrary.simpleMessage("التفاصيل"),
+        "dine_in": MessageLookupByLibrary.simpleMessage("تناول في المطعم"),
         "discount": MessageLookupByLibrary.simpleMessage("الخصومات"),
         "done": MessageLookupByLibrary.simpleMessage("تم"),
         "edit_profile":
@@ -93,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("هذه الخانة مطلوبة"),
         "filter": MessageLookupByLibrary.simpleMessage("تصفية"),
         "floor_no": MessageLookupByLibrary.simpleMessage("رقم الطابق"),
+        "floor_num": MessageLookupByLibrary.simpleMessage("رقم الطابق:"),
         "floor_number": MessageLookupByLibrary.simpleMessage("رقم الطابق"),
         "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
         "history": MessageLookupByLibrary.simpleMessage("السجل"),
@@ -125,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا توجد عروض متاحة"),
         "no_order_history":
             MessageLookupByLibrary.simpleMessage("لا يوجد سجل طلبات"),
+        "note": MessageLookupByLibrary.simpleMessage("ملاحظة"),
         "ongoing": MessageLookupByLibrary.simpleMessage("جاري التنفيذ"),
         "order_actions": MessageLookupByLibrary.simpleMessage("إجراءات الطلب"),
         "order_amount": m1,
@@ -136,16 +157,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "out_for_delivery":
             MessageLookupByLibrary.simpleMessage("في الطريق للتوصيل"),
         "paid_by": m4,
+        "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
         "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
         "personal_info":
             MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
         "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "pick_up": MessageLookupByLibrary.simpleMessage("استلام"),
+        "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
+        "please_fill_required_fields": MessageLookupByLibrary.simpleMessage(
+            "يرجى ملء جميع الحقول المطلوبة"),
         "please_select_zone":
             MessageLookupByLibrary.simpleMessage("يرجى اختيار منطقة"),
         "points": MessageLookupByLibrary.simpleMessage("النقاط"),
         "popular_food": MessageLookupByLibrary.simpleMessage("الطعام الشائع"),
         "preparing": MessageLookupByLibrary.simpleMessage("جار التحضير"),
         "price": MessageLookupByLibrary.simpleMessage("السعر"),
+        "receipt_uploaded_successfully":
+            MessageLookupByLibrary.simpleMessage("تم رفع الإيصال بنجاح."),
+        "recieving_time": MessageLookupByLibrary.simpleMessage("وقت الاستلام"),
         "redeeem_points":
             MessageLookupByLibrary.simpleMessage("استرداد النقاط"),
         "redeem": MessageLookupByLibrary.simpleMessage("استرداد"),
@@ -159,6 +188,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "see_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "select_language": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
+        "select_recieving_time":
+            MessageLookupByLibrary.simpleMessage("اختر وقت الاستلام"),
         "select_zone": MessageLookupByLibrary.simpleMessage("اختر المنطقة"),
         "selected_address":
             MessageLookupByLibrary.simpleMessage("العنوان المختار"),
@@ -169,7 +200,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "total_food": MessageLookupByLibrary.simpleMessage("إجمالي الطعام"),
         "total_tax": MessageLookupByLibrary.simpleMessage("إجمالي الضرائب"),
         "track_order": MessageLookupByLibrary.simpleMessage("تتبع الطلب"),
+        "try_another_payment_please":
+            MessageLookupByLibrary.simpleMessage("يرجى تجربة طريقة دفع أخرى"),
+        "upload_reciept": MessageLookupByLibrary.simpleMessage("رفع الإيصال"),
         "work": MessageLookupByLibrary.simpleMessage("العمل"),
+        "you_have_to_login_first":
+            MessageLookupByLibrary.simpleMessage("عليك تسجيل الدخول اولا"),
         "your_location": MessageLookupByLibrary.simpleMessage("موقعك")
       };
 }

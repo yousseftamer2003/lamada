@@ -39,11 +39,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose Pickup or Delivery"),
         "Egp": MessageLookupByLibrary.simpleMessage("EGP"),
         "English": MessageLookupByLibrary.simpleMessage("English"),
+        "PayTo": MessageLookupByLibrary.simpleMessage("Pay to"),
+        "Please_select_a_delivery_time": MessageLookupByLibrary.simpleMessage(
+            "Please select a delivery time"),
+        "Please_select_a_payment_method_and_delivery_option":
+            MessageLookupByLibrary.simpleMessage(
+                "Please select a payment method and delivery option"),
+        "Please_select_an_address_to_procced_the_order":
+            MessageLookupByLibrary.simpleMessage(
+                "Please select an address to procced the order"),
+        "Please_select_an_branch_to_procced_the_order":
+            MessageLookupByLibrary.simpleMessage(
+                "Please select an branch to procced the order"),
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "Result": MessageLookupByLibrary.simpleMessage("Result"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome,"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("Add New Address"),
         "add_address": MessageLookupByLibrary.simpleMessage("Add Address"),
+        "add_note": MessageLookupByLibrary.simpleMessage(
+            "Add a note (e.g., delivery instructions)"),
         "add_on_order": MessageLookupByLibrary.simpleMessage("Add on order"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "additional_data":
@@ -51,9 +66,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "addresses": MessageLookupByLibrary.simpleMessage("Addresses"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
+        "apartement": MessageLookupByLibrary.simpleMessage("apartment:"),
         "apartment": MessageLookupByLibrary.simpleMessage("Apartment"),
         "appBarTitle": MessageLookupByLibrary.simpleMessage("Addresses"),
         "building_no": MessageLookupByLibrary.simpleMessage("Building No."),
+        "building_num": MessageLookupByLibrary.simpleMessage("building num:"),
         "building_number":
             MessageLookupByLibrary.simpleMessage("Building Number"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -75,10 +92,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteAddressWarning": MessageLookupByLibrary.simpleMessage(
             "Are you sure you want to delete this address? This action cannot be undone."),
         "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+        "delivery": MessageLookupByLibrary.simpleMessage("Delivery"),
         "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
         "delivery_time":
             MessageLookupByLibrary.simpleMessage("Delivery time: unknown"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
+        "dine_in": MessageLookupByLibrary.simpleMessage("Dine In"),
         "discount": MessageLookupByLibrary.simpleMessage("Discount"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -95,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("This field is required"),
         "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "floor_no": MessageLookupByLibrary.simpleMessage("Floor No."),
+        "floor_num": MessageLookupByLibrary.simpleMessage("floor num:"),
         "floor_number": MessageLookupByLibrary.simpleMessage("Floor Number"),
         "full_name": MessageLookupByLibrary.simpleMessage("FULL NAME"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
@@ -127,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No offers available"),
         "no_order_history":
             MessageLookupByLibrary.simpleMessage("No order history"),
+        "note": MessageLookupByLibrary.simpleMessage("Note"),
         "ongoing": MessageLookupByLibrary.simpleMessage("Ongoing"),
         "order_actions": MessageLookupByLibrary.simpleMessage("Order Actions"),
         "order_amount": m1,
@@ -139,15 +160,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "out_for_delivery":
             MessageLookupByLibrary.simpleMessage("Out for Delivery"),
         "paid_by": m4,
+        "payment_method":
+            MessageLookupByLibrary.simpleMessage("Payment Method"),
         "pending": MessageLookupByLibrary.simpleMessage("Pending"),
         "personal_info": MessageLookupByLibrary.simpleMessage("Personal Info"),
         "phone_number": MessageLookupByLibrary.simpleMessage("PHONE NUMBER"),
+        "pick_up": MessageLookupByLibrary.simpleMessage("Pick Up"),
+        "place_order": MessageLookupByLibrary.simpleMessage("Place Order"),
+        "please_fill_required_fields": MessageLookupByLibrary.simpleMessage(
+            "Please fill all the required fields"),
         "please_select_zone":
             MessageLookupByLibrary.simpleMessage("Please select a zone"),
         "points": MessageLookupByLibrary.simpleMessage("Points"),
         "popular_food": MessageLookupByLibrary.simpleMessage("Popular Food"),
         "preparing": MessageLookupByLibrary.simpleMessage("Preparing"),
         "price": MessageLookupByLibrary.simpleMessage("Price"),
+        "receipt_uploaded_successfully": MessageLookupByLibrary.simpleMessage(
+            "Receipt uploaded successfully."),
+        "recieving_time":
+            MessageLookupByLibrary.simpleMessage("Recieving Time"),
         "redeeem_points":
             MessageLookupByLibrary.simpleMessage("Redeeem points"),
         "redeem": MessageLookupByLibrary.simpleMessage("Redeem"),
@@ -162,6 +193,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "see_all": MessageLookupByLibrary.simpleMessage("See All"),
         "select_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),
+        "select_recieving_time":
+            MessageLookupByLibrary.simpleMessage("Select recieving time"),
         "select_zone": MessageLookupByLibrary.simpleMessage("Select Zone"),
         "selected_address":
             MessageLookupByLibrary.simpleMessage("Selected Address"),
@@ -172,7 +205,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "total_food": MessageLookupByLibrary.simpleMessage("Total Food"),
         "total_tax": MessageLookupByLibrary.simpleMessage("Total Tax"),
         "track_order": MessageLookupByLibrary.simpleMessage("Track Order"),
+        "try_another_payment_please":
+            MessageLookupByLibrary.simpleMessage("try anothe rpayment please"),
+        "upload_reciept":
+            MessageLookupByLibrary.simpleMessage("Upload Receipt"),
         "work": MessageLookupByLibrary.simpleMessage("Work"),
+        "you_have_to_login_first":
+            MessageLookupByLibrary.simpleMessage("You have to login first"),
         "your_location": MessageLookupByLibrary.simpleMessage("Your Location")
       };
 }

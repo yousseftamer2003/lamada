@@ -102,17 +102,17 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
                             children: [
-                              _buildInfoRow(Icons.person, 'FULL NAME',
+                              _buildInfoRow(Icons.person, S.of(context).full_name,
                                   '${profilesProvider.userProfile!.fName} ${profilesProvider.userProfile!.lName}'),
                               const SizedBox(
                                 height: 15,
                               ),
-                              _buildInfoRow(Icons.email, 'EMAIL',
+                              _buildInfoRow(Icons.email, S.of(context).email,
                                   profilesProvider.userProfile!.email!),
                               const SizedBox(
                                 height: 15,
                               ),
-                              _buildInfoRow(Icons.phone, 'PHONE NUMBER',
+                              _buildInfoRow(Icons.phone, S.of(context).phone_number,
                                   profilesProvider.userProfile!.phone!),
                               const SizedBox(
                                 height: 15,

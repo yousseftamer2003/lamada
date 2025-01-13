@@ -84,11 +84,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       children: orderTypes.map((type) {
                         String text;
                         if (type.type == 'take_away') {
-                          text = 'Pickup';
+                          text = S.of(context).pick_up;
                         } else if (type.type == 'dine_in') {
-                          text = 'Dine In';
+                          text = S.of(context).dine_in;
                         } else if (type.type == 'delivery') {
-                          text = 'Delivery';
+                          text = S.of(context).delivery;
                         } else {
                           text = _capitalize(type.type);
                         }
@@ -107,7 +107,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     if (selectedDeliveryOption == 'delivery')
                       _buildDeliveryLocationCard(addressProvider.addresses),
                     const SizedBox(height: 30),
-                    _buildSectionTitle('Payment Method'),
+                    _buildSectionTitle(S.of(context).payment_method),
                     const SizedBox(height: 10),
                     Column(
                       children: paymentMethods.map((method) {
@@ -115,12 +115,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       }).toList(),
                     ),
                     const SizedBox(height: 30),
-                    _buildSectionTitle('Note'),
+                    _buildSectionTitle(S.of(context).note),
                     const SizedBox(height: 10),
                     _buildNoteInputField(),
                     if (!deliveryNow) ...[
                       const SizedBox(height: 20),
-                      _buildSectionTitle('recieving Time'),
+                      _buildSectionTitle(S.of(context).recieving_time),
                       const SizedBox(height: 10),
                       _buildDeliveryTimePicker(),
                     ],
@@ -144,7 +144,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           return _buildSelectionTile(
               address.id, // Pass the unique id
               address.type,
-              '${address.street} building num: ${address.buildingNum} floor num: ${address.floorNum} apartment: ${address.apartment} additional data: ${address.additionalData}',
+              '${address.street} ${S.of(context).building_num} ${address.buildingNum} ${S.of(context).floor_num} ${address.floorNum} ${S.of(context).apartement} ${address.apartment} ${S.of(context).additional_data} ${address.additionalData}',
               selectedAdressId, // Update this to use the unique id
               (value) {
             setState(() {
@@ -153,7 +153,6 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               zonePrice = price;
               isChosen = true;
             });
-            log('zone price: $zonePrice');
           }, price);
         }),
         const SizedBox(height: 15),
@@ -175,9 +174,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 ),
               );
             },
-            child: const Text(
-              'Add New Address',
-              style: TextStyle(fontSize: 16, color: Colors.white),
+            child: Text(
+              S.of(context).addNewAddress,
+              style: const TextStyle(fontSize: 16, color: Colors.white),
             ),
           ),
         ),
@@ -194,7 +193,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           : Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Delivery fees: +$price EGP',
+                Text('${S.of(context).delivery_fee} +$price EGP',
                     style: TextStyle(
                         color: isChosen ? Colors.white : maincolor,
                         fontSize: 16)),
@@ -320,10 +319,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Pay to: 01080290678',style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                const Text(
-                  'Upload Receipt',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                Text('${S.of(context).PayTo} 01080290678',style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                Text(
+                  S.of(context).upload_reciept,
+                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton.icon(
@@ -331,16 +330,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     await imageServices.pickImage();
                   },
                   icon: const Icon(Icons.upload_file),
-                  label: const Text('Upload Receipt'),
+                  label: Text(S.of(context).upload_reciept),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: maincolor,
                     foregroundColor: Colors.white,
                   ),
                 ),
                 if (imageServices.image != null)
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                    child: Text('Receipt uploaded successfully.'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(S.of(context).receipt_uploaded_successfully),
                   ),
               ],
             ),
@@ -353,7 +352,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     return TextField(
       controller: noteController,
       decoration: InputDecoration(
-        hintText: 'Add a note (e.g., delivery instructions)',
+        hintText: S.of(context).add_note,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         filled: true,
         fillColor: Colors.grey[200],
@@ -386,7 +385,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         child: TextField(
           controller: deliveryTimeController,
           decoration: InputDecoration(
-            hintText: 'Select recieving time',
+            hintText: S.of(context).select_recieving_time,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
@@ -440,7 +439,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         if (selectedPaymentMethod == null || selectedDeliveryOption == null) {
           showTopSnackBar(
               context,
-              'Please select a payment method and delivery option',
+              S.of(context).Please_select_a_payment_method_and_delivery_option,
               Icons.warning_outlined,
               maincolor,
               const Duration(seconds: 4));
@@ -452,7 +451,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         if (selectedDeliveryLocation == null && selectedDeliveryOption == 'delivery') {
           showTopSnackBar(
               context,
-              'Please select an address to procced the order',
+              S.of(context).Please_select_an_address_to_procced_the_order,
               Icons.warning_outlined,
               maincolor,
               const Duration(seconds: 4));
@@ -465,7 +464,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         if (selectedBranch == null && selectedDeliveryOption == 'take_away') {
           showTopSnackBar(
               context,
-              'Please select an branch to procced the order',
+              S.of(context).Please_select_an_branch_to_procced_the_order,
               Icons.warning_outlined,
               maincolor,
               const Duration(seconds: 4));
@@ -478,7 +477,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         if (!deliveryNow && deliveryTimeController.text.isEmpty) {
           showTopSnackBar(
               context,
-              'Please select a delivery time',
+              S.of(context).Please_select_a_delivery_time,
               Icons.warning_outlined,
               maincolor,
               const Duration(seconds: 3));
@@ -496,9 +495,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   .firstWhere((method) => method.name == selectedPaymentMethod);
 
           if (selectedPayment == null) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('try another payment please')),
-            );
+            showTopSnackBar(
+              context,
+              S.of(context).try_another_payment_please,
+              Icons.warning_outlined,
+              maincolor,
+              const Duration(seconds: 4));
             setState(() {
               isLoading = false;
             });
@@ -531,9 +533,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             isLoading = false;
           });
         } catch (e) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Error: ${e.toString()}')),
-          );
+          log('message error in place order: $e');
         }
       },
       style: ElevatedButton.styleFrom(
@@ -548,9 +548,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             ? const CircularProgressIndicator(
                 color: Colors.white,
               )
-            : const Text(
-                'Place Order',
-                style: TextStyle(
+            : Text(
+                S.of(context).place_order,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,

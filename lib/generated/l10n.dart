@@ -1133,6 +1133,236 @@ class S {
       args: [],
     );
   }
+
+  /// `Pick Up`
+  String get pick_up {
+    return Intl.message(
+      'Pick Up',
+      name: 'pick_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dine In`
+  String get dine_in {
+    return Intl.message(
+      'Dine In',
+      name: 'dine_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery`
+  String get delivery {
+    return Intl.message(
+      'Delivery',
+      name: 'delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Method`
+  String get payment_method {
+    return Intl.message(
+      'Payment Method',
+      name: 'payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recieving Time`
+  String get recieving_time {
+    return Intl.message(
+      'Recieving Time',
+      name: 'recieving_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `building num:`
+  String get building_num {
+    return Intl.message(
+      'building num:',
+      name: 'building_num',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `floor num:`
+  String get floor_num {
+    return Intl.message(
+      'floor num:',
+      name: 'floor_num',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `apartment:`
+  String get apartement {
+    return Intl.message(
+      'apartment:',
+      name: 'apartement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note`
+  String get note {
+    return Intl.message(
+      'Note',
+      name: 'note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Receipt`
+  String get upload_reciept {
+    return Intl.message(
+      'Upload Receipt',
+      name: 'upload_reciept',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay to`
+  String get PayTo {
+    return Intl.message(
+      'Pay to',
+      name: 'PayTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receipt uploaded successfully.`
+  String get receipt_uploaded_successfully {
+    return Intl.message(
+      'Receipt uploaded successfully.',
+      name: 'receipt_uploaded_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a note (e.g., delivery instructions)`
+  String get add_note {
+    return Intl.message(
+      'Add a note (e.g., delivery instructions)',
+      name: 'add_note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select recieving time`
+  String get select_recieving_time {
+    return Intl.message(
+      'Select recieving time',
+      name: 'select_recieving_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a payment method and delivery option`
+  String get Please_select_a_payment_method_and_delivery_option {
+    return Intl.message(
+      'Please select a payment method and delivery option',
+      name: 'Please_select_a_payment_method_and_delivery_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an address to procced the order`
+  String get Please_select_an_address_to_procced_the_order {
+    return Intl.message(
+      'Please select an address to procced the order',
+      name: 'Please_select_an_address_to_procced_the_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an branch to procced the order`
+  String get Please_select_an_branch_to_procced_the_order {
+    return Intl.message(
+      'Please select an branch to procced the order',
+      name: 'Please_select_an_branch_to_procced_the_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a delivery time`
+  String get Please_select_a_delivery_time {
+    return Intl.message(
+      'Please select a delivery time',
+      name: 'Please_select_a_delivery_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `try anothe rpayment please`
+  String get try_another_payment_please {
+    return Intl.message(
+      'try anothe rpayment please',
+      name: 'try_another_payment_please',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place Order`
+  String get place_order {
+    return Intl.message(
+      'Place Order',
+      name: 'place_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have to login first`
+  String get you_have_to_login_first {
+    return Intl.message(
+      'You have to login first',
+      name: 'you_have_to_login_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill all the required fields`
+  String get please_fill_required_fields {
+    return Intl.message(
+      'Please fill all the required fields',
+      name: 'please_fill_required_fields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Result`
+  String get Result {
+    return Intl.message(
+      'Result',
+      name: 'Result',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
