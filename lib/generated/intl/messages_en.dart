@@ -20,6 +20,18 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(error) => "Error: ${error}";
+
+  static String m1(amount) => "${amount} £";
+
+  static String m2(id) => "Order #${id}";
+
+  static String m3(status) => "Status: ${status}";
+
+  static String m4(paidBy) => "Paid by ${paidBy}";
+
+  static String m5(minutes) => "Time Difference: ${minutes} minutes";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
@@ -29,32 +41,80 @@ class MessageLookup extends MessageLookupByLibrary {
         "English": MessageLookupByLibrary.simpleMessage("English"),
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome,"),
+        "addNewAddress":
+            MessageLookupByLibrary.simpleMessage("Add New Address"),
+        "add_address": MessageLookupByLibrary.simpleMessage("Add Address"),
         "add_on_order": MessageLookupByLibrary.simpleMessage("Add on order"),
         "add_to_cart": MessageLookupByLibrary.simpleMessage("Add to cart"),
+        "additional_data":
+            MessageLookupByLibrary.simpleMessage("Additional Data"),
+        "address": MessageLookupByLibrary.simpleMessage("Address"),
         "addresses": MessageLookupByLibrary.simpleMessage("Addresses"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
+        "apartment": MessageLookupByLibrary.simpleMessage("Apartment"),
+        "appBarTitle": MessageLookupByLibrary.simpleMessage("Addresses"),
+        "building_no": MessageLookupByLibrary.simpleMessage("Building No."),
+        "building_number":
+            MessageLookupByLibrary.simpleMessage("Building Number"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cancel_order": MessageLookupByLibrary.simpleMessage("Cancel Order"),
+        "cancellation_time_expired":
+            MessageLookupByLibrary.simpleMessage("Cancellation Time Expired"),
         "cart_details": MessageLookupByLibrary.simpleMessage("Cart Details"),
+        "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "category": MessageLookupByLibrary.simpleMessage("Category"),
         "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+        "choose_action": MessageLookupByLibrary.simpleMessage(
+            "Choose an action for your order."),
         "choose_your_favorite_food":
             MessageLookupByLibrary.simpleMessage("Choose\nYour Favorite Food"),
         "continueee": MessageLookupByLibrary.simpleMessage("Continue"),
         "deals": MessageLookupByLibrary.simpleMessage("Deals"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "deleteAddress": MessageLookupByLibrary.simpleMessage("Delete Address"),
+        "deleteAddressWarning": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to delete this address? This action cannot be undone."),
+        "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
         "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
+        "delivery_time":
+            MessageLookupByLibrary.simpleMessage("Delivery time: unknown"),
         "details": MessageLookupByLibrary.simpleMessage("Details"),
         "discount": MessageLookupByLibrary.simpleMessage("Discount"),
+        "done": MessageLookupByLibrary.simpleMessage("Done"),
+        "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+        "email": MessageLookupByLibrary.simpleMessage("EMAIL"),
+        "error_loading_data": m0,
+        "exploreMenu": MessageLookupByLibrary.simpleMessage("Explore Menu"),
         "explore_menu": MessageLookupByLibrary.simpleMessage("Explore Menu"),
         "failed_to_load":
             MessageLookupByLibrary.simpleMessage("Failed to load profile data"),
         "failed_to_load_profile":
             MessageLookupByLibrary.simpleMessage("Failed to load profile data"),
         "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
+        "field_required":
+            MessageLookupByLibrary.simpleMessage("This field is required"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filter"),
+        "floor_no": MessageLookupByLibrary.simpleMessage("Floor No."),
+        "floor_number": MessageLookupByLibrary.simpleMessage("Floor Number"),
+        "full_name": MessageLookupByLibrary.simpleMessage("FULL NAME"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "ingredients": MessageLookupByLibrary.simpleMessage("Ingredients"),
         "item_added_to_cart":
             MessageLookupByLibrary.simpleMessage("Item added to cart"),
+        "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
+        "loadingCategories":
+            MessageLookupByLibrary.simpleMessage("Loading categories..."),
         "log_out": MessageLookupByLibrary.simpleMessage("Log Out"),
+        "myOrder": MessageLookupByLibrary.simpleMessage("My Order"),
         "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
+        "noAddressesFound":
+            MessageLookupByLibrary.simpleMessage("No addresses found!"),
+        "noOrderHistory":
+            MessageLookupByLibrary.simpleMessage("No Order History"),
+        "noOrders": MessageLookupByLibrary.simpleMessage(
+            "You haven\'t made any purchase yet"),
+        "no_data_found": MessageLookupByLibrary.simpleMessage("No data found"),
         "no_discount_items_available":
             MessageLookupByLibrary.simpleMessage("No discount items available"),
         "no_extras_available":
@@ -68,16 +128,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "no_order_history":
             MessageLookupByLibrary.simpleMessage("No order history"),
         "ongoing": MessageLookupByLibrary.simpleMessage("Ongoing"),
+        "order_actions": MessageLookupByLibrary.simpleMessage("Order Actions"),
+        "order_amount": m1,
+        "order_number": m2,
+        "order_status": m3,
         "order_summary": MessageLookupByLibrary.simpleMessage("Order Summary"),
+        "order_tracking":
+            MessageLookupByLibrary.simpleMessage("Order Tracking"),
+        "other": MessageLookupByLibrary.simpleMessage("Other"),
+        "out_for_delivery":
+            MessageLookupByLibrary.simpleMessage("Out for Delivery"),
+        "paid_by": m4,
+        "pending": MessageLookupByLibrary.simpleMessage("Pending"),
         "personal_info": MessageLookupByLibrary.simpleMessage("Personal Info"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("PHONE NUMBER"),
+        "please_select_zone":
+            MessageLookupByLibrary.simpleMessage("Please select a zone"),
         "points": MessageLookupByLibrary.simpleMessage("Points"),
         "popular_food": MessageLookupByLibrary.simpleMessage("Popular Food"),
+        "preparing": MessageLookupByLibrary.simpleMessage("Preparing"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
         "redeeem_points":
             MessageLookupByLibrary.simpleMessage("Redeeem points"),
         "redeem": MessageLookupByLibrary.simpleMessage("Redeem"),
         "redeem_in_restaurant":
             MessageLookupByLibrary.simpleMessage("Redeem In Restaurant?"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "save_address": MessageLookupByLibrary.simpleMessage("Save Address"),
         "scan_the_code_in_the_restaurant_within_3_mins":
             MessageLookupByLibrary.simpleMessage(
                 "Scan the code in the restaurant within 3 miniutes"),
@@ -85,8 +162,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "see_all": MessageLookupByLibrary.simpleMessage("See All"),
         "select_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),
+        "select_zone": MessageLookupByLibrary.simpleMessage("Select Zone"),
+        "selected_address":
+            MessageLookupByLibrary.simpleMessage("Selected Address"),
+        "street": MessageLookupByLibrary.simpleMessage("Street"),
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "time_difference": m5,
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "total_food": MessageLookupByLibrary.simpleMessage("Total Food"),
-        "total_tax": MessageLookupByLibrary.simpleMessage("Total Tax")
+        "total_tax": MessageLookupByLibrary.simpleMessage("Total Tax"),
+        "track_order": MessageLookupByLibrary.simpleMessage("Track Order"),
+        "work": MessageLookupByLibrary.simpleMessage("Work"),
+        "your_location": MessageLookupByLibrary.simpleMessage("Your Location")
       };
 }

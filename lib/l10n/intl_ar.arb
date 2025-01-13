@@ -104,8 +104,8 @@
     "error_loading_data": "خطأ: {error}",
     "no_data_found": "لا توجد بيانات",
     "filter": "تصفية",
-  "categories": "الفئات",
-  "price": "السعر",
-  "done": "تم",
-  "loadingCategories": "جاري تحميل الفئات..."
+    "categories": "الفئات",
+    "price": "السعر",
+    "done": "تم",
+    "loadingCategories": "جاري تحميل الفئات..."
 }

@@ -535,6 +535,56 @@ class S {
   }
 
   /// `Failed to load profile data`
+  String get failed_to_load_profile {
+    return Intl.message(
+      'Failed to load profile data',
+      name: 'failed_to_load_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FULL NAME`
+  String get full_name {
+    return Intl.message(
+      'FULL NAME',
+      name: 'full_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EMAIL`
+  String get email {
+    return Intl.message(
+      'EMAIL',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PHONE NUMBER`
+  String get phone_number {
+    return Intl.message(
+      'PHONE NUMBER',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load profile data`
   String get failed_to_load {
     return Intl.message(
       'Failed to load profile data',
@@ -544,11 +594,541 @@ class S {
     );
   }
 
-  /// `Failed to load profile data`
-  String get failed_to_load_profile {
+  /// `Loading...`
+  String get loading {
     return Intl.message(
-      'Failed to load profile data',
-      name: 'failed_to_load_profile',
+      'Loading...',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Addresses`
+  String get appBarTitle {
+    return Intl.message(
+      'Addresses',
+      name: 'appBarTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Address`
+  String get addNewAddress {
+    return Intl.message(
+      'Add New Address',
+      name: 'addNewAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No addresses found!`
+  String get noAddressesFound {
+    return Intl.message(
+      'No addresses found!',
+      name: 'noAddressesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Address`
+  String get deleteAddress {
+    return Intl.message(
+      'Delete Address',
+      name: 'deleteAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this address? This action cannot be undone.`
+  String get deleteAddressWarning {
+    return Intl.message(
+      'Are you sure you want to delete this address? This action cannot be undone.',
+      name: 'deleteAddressWarning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Address`
+  String get add_address {
+    return Intl.message(
+      'Add Address',
+      name: 'add_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Location`
+  String get your_location {
+    return Intl.message(
+      'Your Location',
+      name: 'your_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Building Number`
+  String get building_number {
+    return Intl.message(
+      'Building Number',
+      name: 'building_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Floor Number`
+  String get floor_number {
+    return Intl.message(
+      'Floor Number',
+      name: 'floor_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category`
+  String get category {
+    return Intl.message(
+      'Category',
+      name: 'category',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected Address`
+  String get selected_address {
+    return Intl.message(
+      'Selected Address',
+      name: 'selected_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Zone`
+  String get select_zone {
+    return Intl.message(
+      'Select Zone',
+      name: 'select_zone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Street`
+  String get street {
+    return Intl.message(
+      'Street',
+      name: 'street',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Building No.`
+  String get building_no {
+    return Intl.message(
+      'Building No.',
+      name: 'building_no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Floor No.`
+  String get floor_no {
+    return Intl.message(
+      'Floor No.',
+      name: 'floor_no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apartment`
+  String get apartment {
+    return Intl.message(
+      'Apartment',
+      name: 'apartment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Additional Data`
+  String get additional_data {
+    return Intl.message(
+      'Additional Data',
+      name: 'additional_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Address`
+  String get save_address {
+    return Intl.message(
+      'Save Address',
+      name: 'save_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Work`
+  String get work {
+    return Intl.message(
+      'Work',
+      name: 'work',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message(
+      'Other',
+      name: 'other',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a zone`
+  String get please_select_zone {
+    return Intl.message(
+      'Please select a zone',
+      name: 'please_select_zone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get field_required {
+    return Intl.message(
+      'This field is required',
+      name: 'field_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Order`
+  String get myOrder {
+    return Intl.message(
+      'My Order',
+      name: 'myOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Order History`
+  String get noOrderHistory {
+    return Intl.message(
+      'No Order History',
+      name: 'noOrderHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You haven't made any purchase yet`
+  String get noOrders {
+    return Intl.message(
+      'You haven\'t made any purchase yet',
+      name: 'noOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore Menu`
+  String get exploreMenu {
+    return Intl.message(
+      'Explore Menu',
+      name: 'exploreMenu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Actions`
+  String get order_actions {
+    return Intl.message(
+      'Order Actions',
+      name: 'order_actions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose an action for your order.`
+  String get choose_action {
+    return Intl.message(
+      'Choose an action for your order.',
+      name: 'choose_action',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track Order`
+  String get track_order {
+    return Intl.message(
+      'Track Order',
+      name: 'track_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel Order`
+  String get cancel_order {
+    return Intl.message(
+      'Cancel Order',
+      name: 'cancel_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancellation Time Expired`
+  String get cancellation_time_expired {
+    return Intl.message(
+      'Cancellation Time Expired',
+      name: 'cancellation_time_expired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order #{id}`
+  String order_number(Object id) {
+    return Intl.message(
+      'Order #$id',
+      name: 'order_number',
+      desc: '',
+      args: [id],
+    );
+  }
+
+  /// `{amount} £`
+  String order_amount(Object amount) {
+    return Intl.message(
+      '$amount £',
+      name: 'order_amount',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Paid by {paidBy}`
+  String paid_by(Object paidBy) {
+    return Intl.message(
+      'Paid by $paidBy',
+      name: 'paid_by',
+      desc: '',
+      args: [paidBy],
+    );
+  }
+
+  /// `Status: {status}`
+  String order_status(Object status) {
+    return Intl.message(
+      'Status: $status',
+      name: 'order_status',
+      desc: '',
+      args: [status],
+    );
+  }
+
+  /// `Order Tracking`
+  String get order_tracking {
+    return Intl.message(
+      'Order Tracking',
+      name: 'order_tracking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery time: unknown`
+  String get delivery_time {
+    return Intl.message(
+      'Delivery time: unknown',
+      name: 'delivery_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time Difference: {minutes} minutes`
+  String time_difference(Object minutes) {
+    return Intl.message(
+      'Time Difference: $minutes minutes',
+      name: 'time_difference',
+      desc: '',
+      args: [minutes],
+    );
+  }
+
+  /// `Pending`
+  String get pending {
+    return Intl.message(
+      'Pending',
+      name: 'pending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preparing`
+  String get preparing {
+    return Intl.message(
+      'Preparing',
+      name: 'preparing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Out for Delivery`
+  String get out_for_delivery {
+    return Intl.message(
+      'Out for Delivery',
+      name: 'out_for_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get delivered {
+    return Intl.message(
+      'Delivered',
+      name: 'delivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error: {error}`
+  String error_loading_data(Object error) {
+    return Intl.message(
+      'Error: $error',
+      name: 'error_loading_data',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `No data found`
+  String get no_data_found {
+    return Intl.message(
+      'No data found',
+      name: 'no_data_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter`
+  String get filter {
+    return Intl.message(
+      'Filter',
+      name: 'filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message(
+      'Categories',
+      name: 'categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message(
+      'Price',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message(
+      'Done',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading categories...`
+  String get loadingCategories {
+    return Intl.message(
+      'Loading categories...',
+      name: 'loadingCategories',
       desc: '',
       args: [],
     );

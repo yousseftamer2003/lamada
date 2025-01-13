@@ -56,7 +56,6 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   url_launcher: ^6.3.1
   webview_flutter: ^4.10.0
-  uni_links3: ^0.5.3
 
 dev_dependencies:
   flutter_lints: ^4.0.0

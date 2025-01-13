@@ -7,6 +7,7 @@ import 'package:food2go_app/constants/colors.dart';
 import 'package:food2go_app/controllers/address/get_address_provider.dart';
 import 'package:food2go_app/view/screens/tabs_screens/screens/profile_screen/full_map_screen.dart';
 import 'package:food2go_app/view/widgets/custom_appbar.dart';
+import 'package:food2go_app/view/widgets/show_top_snackbar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_place/google_place.dart';
 import 'package:geolocator/geolocator.dart';
@@ -312,6 +313,21 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                     setState(() {
                                       _isLoading = true;
                                     });
+                                    if (streetController.text.isEmpty ||
+                                        buildingNumController.text.isEmpty ||
+                                        floorNumController.text.isEmpty ||
+                                        apartmentController.text.isEmpty ||
+                                        selectedZoneId == null ||
+                                        additionalDataController
+                                            .text.isEmpty) {
+                                      showTopSnackBar(
+                                          context,
+                                          'Please fill all the required fields',
+                                          Icons.warning_outlined,
+                                          maincolor,
+                                          const Duration(seconds: 4));
+                                          return;
+                                            }
 
                                     try {
                                       await Provider.of<AddressProvider>(

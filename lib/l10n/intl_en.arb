@@ -108,5 +108,5 @@
     "categories": "Categories",
     "price": "Price",
     "done": "Done",
-  "loadingCategories": "Loading categories..."
+    "loadingCategories": "Loading categories..."
 }

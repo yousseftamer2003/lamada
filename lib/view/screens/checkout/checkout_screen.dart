@@ -320,6 +320,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Text('Pay to: 01080290678',style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                 const Text(
                   'Upload Receipt',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -452,6 +453,19 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           showTopSnackBar(
               context,
               'Please select an address to procced the order',
+              Icons.warning_outlined,
+              maincolor,
+              const Duration(seconds: 4));
+          setState(() {
+            isLoading = false;
+          });
+          return;
+        }
+
+        if (selectedBranch == null && selectedDeliveryOption == 'take_away') {
+          showTopSnackBar(
+              context,
+              'Please select an branch to procced the order',
               Icons.warning_outlined,
               maincolor,
               const Duration(seconds: 4));
