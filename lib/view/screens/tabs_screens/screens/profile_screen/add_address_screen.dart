@@ -93,6 +93,8 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
     await _getAddressFromLatLng(_initialPosition);
   }
 
+  String? mapLink;
+
   Future<void> _getAddressFromLatLng(LatLng position) async {
     try {
       List<Placemark> placemarks = await placemarkFromCoordinates(
@@ -102,11 +104,15 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
       Placemark place = placemarks[0];
       String address =
           '${place.street}, ${place.subLocality}, ${place.locality}, ${place.country}';
+
       setState(() {
         addressController.text = address;
+        mapLink =
+            'https://www.google.com/maps?q=${position.latitude},${position.longitude}';
       });
     } catch (e) {
       addressController.text = 'Unable to get address';
+      mapLink = null;
     }
   }
 
@@ -313,6 +319,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                     setState(() {
                                       _isLoading = true;
                                     });
+
                                     if (streetController.text.isEmpty ||
                                         buildingNumController.text.isEmpty ||
                                         floorNumController.text.isEmpty ||
@@ -320,11 +327,15 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                         selectedZoneId == null ||
                                         additionalDataController.text.isEmpty) {
                                       showTopSnackBar(
-                                          context,
-                                          'Please fill all the required fields',
-                                          Icons.warning_outlined,
-                                          maincolor,
-                                          const Duration(seconds: 4));
+                                        context,
+                                        'Please fill all the required fields',
+                                        Icons.warning_outlined,
+                                        maincolor,
+                                        const Duration(seconds: 4),
+                                      );
+                                      setState(() {
+                                        _isLoading = false;
+                                      });
                                       return;
                                     }
 
@@ -343,6 +354,20 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                         additionalData:
                                             additionalDataController.text,
                                         type: selectedCategory,
+                                      );
+
+                                      String googleMapsLink =
+                                          "https://www.google.com/maps?q=${_selectedPosition.latitude},${_selectedPosition.longitude}";
+                                      debugPrint(
+                                          "Google Maps Link: $googleMapsLink");
+
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                              "Location Link: $googleMapsLink"),
+                                          duration: const Duration(seconds: 4),
+                                        ),
                                       );
                                     } finally {
                                       setState(() {
